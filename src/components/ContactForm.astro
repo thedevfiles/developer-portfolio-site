@@ -1,0 +1,108 @@
+---
+import { Icon } from "astro-icon";
+---
+
+<form
+  id="contact-form"
+  name="contact"
+  method="POST"
+  netlify-honeypot="bot-field"
+  data-netlify-recaptcha="true"
+  data-netlify="true"
+>
+  <fieldset class="space-y-4">
+    <div>
+      <label for="contact-name" class="block mb-1">Name</label>
+      <input
+        id="contact-name"
+        class="w-full text-black bg-white"
+        type="text"
+        name="name"
+        autocomplete="name"
+        required
+      />
+    </div>
+    <div>
+      <label for="contact-email" class="block mb-1">Email</label>
+      <input
+        id="contact-email"
+        class="w-full text-black bg-white"
+        type="email"
+        name="email"
+        autocomplete="email"
+        required
+      />
+    </div>
+    <div>
+      <label for="contact-message" class="block mb-1">Message</label>
+      <textarea
+        id="contact-message"
+        class="w-full text-black bg-white"
+        name="message"
+        rows="5"
+        autocomplete="off"
+        required></textarea>
+    </div>
+    <div data-netlify-recaptcha="true"></div>
+    <div class="flex space-x-4 justify-start items-center">
+      <button
+        type="submit"
+        class="rounded-md bg-fuchsia-600 px-3.5 py-2.5 text-sm leading-2 font-semibold text-white shadow-sm hover:bg-fuchsia-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-600"
+        >Submit</button
+      >
+      <div id="contact-form-busy" class="hidden">
+        <Icon
+          pack="mdi"
+          name="loading"
+          class="w-10 h-10 animate-spin"
+          role="img"
+          aria-labelledby="social-link-github-label"
+        />
+      </div>
+      <div id="contact-form-error" class="hidden bg-red-600 p-2 rounded">
+        Could not submit your message at this time.
+      </div>
+    </div>
+    <p class="hidden">
+      <label>
+        Don’t fill this out if you’re human: <input name="bot-field" />
+      </label>
+    </p>
+  </fieldset>
+</form>
+<div id="result-success" class="hidden mt-6">
+  <h2 class="text-2xl font-semibold">Thank you for your message!</h2>
+  <p class="text-lg">I'll get back to you as soon as I can.</p>
+</div>
+<script>
+  (function () {
+    const form = document.getElementById("contact-form");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const formdata = new FormData(e.target);
+      form.querySelector("fieldset")?.setAttribute("disabled", "disabled");
+      form.querySelector("button")?.setAttribute("disabled", "disabled");
+      document.getElementById("contact-form-error").classList.add("hidden");
+      document.getElementById("result-success").classList.add("hidden");
+      document.getElementById("contact-form-busy").classList.remove("hidden");
+
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formdata).toString(),
+      })
+        .then(() => {
+          form.remove();
+          document.getElementById("result-success").classList.remove("hidden");
+        })
+        .catch(error => {
+          document.getElementById("contact-form-busy").classList.add("hidden");
+          form.querySelector("fieldset")?.removeAttribute("disabled");
+          form.querySelector("button")?.removeAttribute("disabled");
+          document
+            .getElementById("contact-form-error")
+            .classList.remove("hidden");
+        });
+    });
+  })();
+</script>
