@@ -23,7 +23,7 @@ const transition = `title-${slug}`
 
 <SiteLayout title={name}>
   <Container>
-    <PageTitle transition={transition}>{name}</PageTitle>
+    <PageTitle transition:name={transition}>{name}</PageTitle>
     <div transition:name={slug} class="w-[500px] aspect-video bg-red-500"></div>
     <p>Project detail page</p>
     </Container>

@@ -7,8 +7,8 @@ const {classes} = Astro.props;
 <Image
   src={photo}
   alt="Jonathan Bernardi"
-  width={Math.ceil(photo.width / 2)}
-  height={Math.ceil(photo.height / 2)}
+  width={Math.floor(photo.width / 2)}
+  height={Math.floor(photo.height / 2)}
   densities={[1.5, 2]}
   class:list={["w-16 h-16 rounded-full", classes]}
 />
