@@ -1,5 +1,7 @@
 ---
 const {classes} = Astro.props;
 ---
-
-<h1 class:list={["text-5xl mb-2", classes]} {...Astro.props}><slot /></h1>
+<div class="mb-6">
+<h1 class:list={["text-5xl", classes]} {...Astro.props}><slot /></h1>
+<slot name="breadcrumbs" />
+</div>

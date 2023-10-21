@@ -1,0 +1,18 @@
+---
+const property = import.meta.env.GOOGLE_ANALYTICS;
+---
+{property && (
+    <script  id="google-analytics"  data-id={property}>
+    if (!window.google_analytics) window.google_analytics = document.getElementById("google-analytics").getAttribute("data-id");
+    if (!window.dataLayer) window.dataLayer = window.dataLayer || [];
+    if (!window.gtag) window.gtag = function () {
+        window.dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", window.google_analytics);
+    document.addEventListener("astro:page-load", (e) => {
+        console.log("Page is loaded", e, gtag);
+    });
+    </script>
+    <script defer src={`https://www.googletagmanager.com/gtag/js?id=${property}`}></script>
+)}

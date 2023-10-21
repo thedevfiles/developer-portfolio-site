@@ -1,0 +1,28 @@
+---
+import Badge from "./Badge.astro";
+const { slug, title, image, technologies } = Astro.props;
+const transition = {
+  title: `project-title-${slug}`,
+  image: `project-image-${slug}`,
+};
+---
+<div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div class="space-y-6">
+        <slot />
+        <div class="space-y-1">
+          <div class="text-lg">Technologies</div>
+          <div class="flex flex-wrap gap-2">
+            {
+              technologies.map(technology => (
+                <Badge color="primary">{technology}</Badge>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+      <div
+        transition:name={transition.image}
+        class="w-[500px] aspect-video bg-red-500"
+      >
+      </div>
+    </div>

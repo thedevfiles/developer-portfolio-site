@@ -1,0 +1,4 @@
+---
+const {classes} = Astro.props;
+---
+<a class:list={["underline hover:text-fuchsia-500", classes]} {...Astro.props}><slot /></a>

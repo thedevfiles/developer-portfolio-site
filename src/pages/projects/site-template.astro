@@ -1,0 +1,44 @@
+---
+import Container from "../../components/Container.astro";
+import PageTitle from "../../components/PageTitle.astro";
+import BreadCrumbs from "../../components/BreadCrumbs.astro";
+import ProjectDetails from "../../components/ProjectDetails.astro";
+import SiteLayout from "../../layouts/main.astro";
+
+const slug = "site-template";
+const title = "Static Site Template";
+const transition = {
+  title: `project-title-${slug}`,
+  image: `project-image-${slug}`,
+};
+const image = "";
+const technologies = [
+  "Node.js", "Eleventy", "Tailwind CSS", "Netlify"
+];
+---
+
+<SiteLayout title={title}>
+  <Container>
+    <PageTitle transition:name={transition.title}>
+      {title}
+      <BreadCrumbs
+        slot="breadcrumbs"
+        breadcrumbs={[
+          { href: "/projects", text: "Projects" },
+          { href: `/projects/${slug}`, text: title },
+        ]}
+      />
+    </PageTitle>
+
+    <ProjectDetails
+      slug={slug}
+      title={title}
+      image={image}
+      technologies={technologies}
+    >
+      <p>
+        A starter template to make building a static website with eleventy quicker.
+      </p>
+    </ProjectDetails>
+  </Container>
+</SiteLayout>

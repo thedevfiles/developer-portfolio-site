@@ -1,0 +1,44 @@
+---
+import Container from "../../components/Container.astro";
+import PageTitle from "../../components/PageTitle.astro";
+import BreadCrumbs from "../../components/BreadCrumbs.astro";
+import ProjectDetails from "../../components/ProjectDetails.astro";
+import SiteLayout from "../../layouts/main.astro";
+
+const slug = "golem-auth";
+const title = "Golem Auth";
+const transition = {
+  title: `project-title-${slug}`,
+  image: `project-image-${slug}`,
+};
+const image = "";
+const technologies = [
+  "PHP", "Symfony", "Zend Framework", "Aura Framework"
+];
+---
+
+<SiteLayout title={title}>
+  <Container>
+    <PageTitle transition:name={transition.title}>
+      {title}
+      <BreadCrumbs
+        slot="breadcrumbs"
+        breadcrumbs={[
+          { href: "/projects", text: "Projects" },
+          { href: `/projects/${slug}`, text: title },
+        ]}
+      />
+    </PageTitle>
+
+    <ProjectDetails
+      slug={slug}
+      title={title}
+      image={image}
+      technologies={technologies}
+    >
+      <p>
+        A adapter-based library for persisting user authentication.
+      </p>
+    </ProjectDetails>
+  </Container>
+</SiteLayout>

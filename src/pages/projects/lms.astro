@@ -1,0 +1,58 @@
+---
+import Container from "../../components/Container.astro";
+import PageTitle from "../../components/PageTitle.astro";
+import BreadCrumbs from "../../components/BreadCrumbs.astro";
+import ProjectDetails from "../../components/ProjectDetails.astro";
+import SiteLayout from "../../layouts/main.astro";
+
+const slug = "lms";
+const title = "Learning Management System";
+const transition = {
+  title: `project-title-${slug}`,
+  image: `project-image-${slug}`,
+};
+const image = "";
+const technologies = [
+  "Laravel",
+          "MySQL",
+          "WordPress",
+          "Laravel Livewire",
+          "Tailwind CSS",
+          "WireUI",
+          "Authorize.net",
+];
+---
+
+<SiteLayout title={title}>
+  <Container>
+    <PageTitle transition:name={transition.title}>
+      {title}
+      <BreadCrumbs
+        slot="breadcrumbs"
+        breadcrumbs={[
+          { href: "/projects", text: "Projects" },
+          { href: `/projects/${slug}`, text: title },
+        ]}
+      />
+    </PageTitle>
+
+    <ProjectDetails
+      slug={slug}
+      title={title}
+      image={image}
+      technologies={technologies}
+    >
+      <p>
+        This application allows customers who have received a requirement for
+        traffic school due to a traffic violation to register for a traffic
+        school course. The courses can be either an online course or an
+        in-person classroom course. The students can then take the online course
+        and pass the quizzes at the end of each chapter. Once the course is
+        complete the student receives a certificate they can show the court to
+        prove they passed the course. Classroom courses will be marked as
+        complete by the instructor. Administrators can run reports through the
+        admin dashboard needed to provide to the government.
+      </p>
+    </ProjectDetails>
+  </Container>
+</SiteLayout>

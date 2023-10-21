@@ -1,0 +1,57 @@
+---
+import Container from "../../components/Container.astro";
+import PageTitle from "../../components/PageTitle.astro";
+import BreadCrumbs from "../../components/BreadCrumbs.astro";
+import ProjectDetails from "../../components/ProjectDetails.astro";
+import SiteLayout from "../../layouts/main.astro";
+
+const slug = "billing";
+const title = "Client Billing System";
+const transition = {
+  title: `project-title-${slug}`,
+  image: `project-image-${slug}`,
+};
+const image = "";
+const technologies = [
+"Laravel",
+"MySQL",
+"Laravel Livewire",
+"Vue.js",
+"Alpine.js",
+"Tailwind CSS",
+"Tailwind UI",
+"Bootstrap",
+"Stripe",
+"NMI Payment Gateway",
+"Cloudflare",
+];
+---
+
+<SiteLayout title={title}>
+  <Container>
+    <PageTitle transition:name={transition.title}>
+      {title}
+      <BreadCrumbs
+        slot="breadcrumbs"
+        breadcrumbs={[
+          { href: "/projects", text: "Projects" },
+          { href: `/projects/${slug}`, text: title },
+        ]}
+      />
+    </PageTitle>
+
+    <ProjectDetails
+      slug={slug}
+      title={title}
+      image={image}
+      technologies={technologies}
+    >
+        <p>
+          Recurring billing application for billing clients for website hosting,
+        domain registrations, email hosting, and application support.
+        </p>
+    </ProjectDetails>
+
+
+  </Container>
+</SiteLayout>

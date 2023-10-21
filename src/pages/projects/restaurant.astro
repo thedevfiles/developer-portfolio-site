@@ -1,0 +1,63 @@
+---
+import Container from "../../components/Container.astro";
+import PageTitle from "../../components/PageTitle.astro";
+import BreadCrumbs from "../../components/BreadCrumbs.astro";
+import SiteLayout from "../../layouts/main.astro";
+import ProjectDetails from "../../components/ProjectDetails.astro";
+
+const slug = "restaurant";
+const title = "Restaurant Online Platform";
+const transition = {
+  title: `project-title-${slug}`,
+  image: `project-image-${slug}`,
+};
+
+const technologies = [
+  "Laravel",
+  "Vue.js",
+  "Vuetify",
+  "React",
+  "MySQL",
+  "Redis",
+  "WordPress",
+  "Netlify",
+  "Eleventy",
+  "AWS",
+  "Websockets",
+  "Stripe",
+  "REST API",
+];
+const image = "";
+---
+
+<SiteLayout title={title}>
+  <Container>
+    <PageTitle transition:name={transition.title}>
+      {title}
+      <BreadCrumbs
+        slot="breadcrumbs"
+        breadcrumbs={[
+          { href: "/projects", text: "Projects" },
+          { href: `/projects/${slug}`, text: title },
+        ]}
+      />
+    </PageTitle>
+
+    <ProjectDetails
+      slug={slug}
+      title={title}
+      image={image}
+      technologies={technologies}
+    >
+        <p>
+          A full online solution for marketing for a local restaurant. Allows
+          users to manage their menu, an event calendar, photo galleries, and a
+          newsletter. The provided content can either be displayed on a website
+          via a WordPress plugin or the platform will generate a hosted static
+          website for the restaurant.
+        </p>
+    </ProjectDetails>
+
+
+  </Container>
+</SiteLayout>

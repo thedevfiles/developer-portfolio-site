@@ -1,0 +1,53 @@
+---
+import Container from "../../components/Container.astro";
+import PageTitle from "../../components/PageTitle.astro";
+import BreadCrumbs from "../../components/BreadCrumbs.astro";
+import ProjectDetails from "../../components/ProjectDetails.astro";
+import SiteLayout from "../../layouts/main.astro";
+
+const slug = "fertility";
+const title = "IVF Donor / Surrogate Database";
+const transition = {
+  title: `project-title-${slug}`,
+  image: `project-image-${slug}`,
+};
+const image = "";
+const technologies = [
+  "Laravel",
+          "MySQL",
+          "Bootstrap",
+          "Vue.js",
+          "AWS S3",
+          "WordPress",
+];
+---
+
+<SiteLayout title={title}>
+  <Container>
+    <PageTitle transition:name={transition.title}>
+      {title}
+      <BreadCrumbs
+        slot="breadcrumbs"
+        breadcrumbs={[
+          { href: "/projects", text: "Projects" },
+          { href: `/projects/${slug}`, text: title },
+        ]}
+      />
+    </PageTitle>
+
+    <ProjectDetails
+      slug={slug}
+      title={title}
+      image={image}
+      technologies={technologies}
+    >
+      <p>
+        Allows donors and surrogates to register for the database, filling out
+        an online application. Once the application is approved registered
+        intended parents may search and view the profiles. Each client site has
+        configuration files to define the sections of the application and the
+        fields on each form.
+      </p>
+    </ProjectDetails>
+  </Container>
+</SiteLayout>

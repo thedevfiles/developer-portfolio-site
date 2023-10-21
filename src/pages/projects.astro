@@ -1,0 +1,83 @@
+---
+import Container from "../components/Container.astro";
+import PageTitle from "../components/PageTitle.astro";
+import ProjectSummary from "../components/ProjectSummary.astro";
+import SiteLayout from "../layouts/main.astro";
+---
+
+<SiteLayout title="projects">
+  <Container>
+    <PageTitle>Projects</PageTitle>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <ProjectSummary
+        slug="restaurant"
+        title="Restaurant Online Platform"
+        image=""
+
+      />
+      <ProjectSummary
+        slug="billing"
+        title="Client Billing System"
+        image=""
+      />
+
+      <ProjectSummary
+        slug="fertility"
+        title="IVF Donor / Surrogate Database"
+        image=""
+      />
+
+      <ProjectSummary
+        slug="lms"
+        title="Learning Management System"
+        image=""
+      />
+
+      <ProjectSummary
+        slug="ecommerce"
+        title="eCommerce Platform"
+        image=""
+      />
+
+      <ProjectSummary
+        slug="uptime"
+        title="Site Monitoring"
+        image=""
+      />
+
+      <ProjectSummary
+        slug="password"
+        title="Website Pasword Database"
+        image=""
+      />
+
+      <ProjectSummary
+        slug="site-template"
+        title="Static Site Template"
+        image=""
+      />
+
+      <ProjectSummary
+        slug="golem-auth"
+        title="Golem Auth"
+        image=""
+        technologies={["PHP", "Symfony", "Zend Framework", "Aura Framework"]}
+      />
+
+      <ProjectSummary
+        slug="tektonik"
+        title="TekTonik"
+        image=""
+        technologies={["WordPress", "Plates"]}
+      />
+
+      <ProjectSummary
+        slug="domain-dispatcher"
+        title="Domain Dispatcher"
+        image=""
+        technologies={["PHP", "League Container"]}
+      />
+    </div>
+  </Container>
+</SiteLayout>

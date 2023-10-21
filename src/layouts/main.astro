@@ -1,14 +1,17 @@
 ---
-import SiteHead from "../components/SiteHead.astro"
-import SiteHeader from "../components/SiteHeader.astro"
-import SiteFooter from "../components/SiteFooter.astro"
-const { title } = Astro.props
+import SiteHead from "../components/SiteHead.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+const { title } = Astro.props;
 ---
+
 <html lang="en">
-    <SiteHead title={title} />
-	<body class="bg-zinc-950 text-white min-h-screen flex flex-col justify-start items-stretch">
-		<SiteHeader />
-		<main class="flex-grow flex-shrink"><slot /></main>
-	    <SiteFooter />
-	</body>
+  <SiteHead title={title} />
+  <body
+    class="bg-zinc-950 text-white min-h-screen flex flex-col justify-start items-stretch overflow-y-scroll"
+  >
+    <SiteHeader />
+    <main class="flex-grow flex-shrink"><slot /></main>
+    <SiteFooter />
+  </body>
 </html>

@@ -1,0 +1,21 @@
+---
+import Button from "../components/Button.astro";
+import Badge from "./Badge.astro";
+import Link from "./Link.astro";
+const { slug, title, image, technologies } = Astro.props;
+const transition = {
+  title: `project-title-${slug}`,
+  image: `project-image-${slug}`,
+};
+---
+
+
+  <a href={`/projects/${slug}`} class="block text-center hover:text-fuchsia-500">
+    <div
+      class="w-full aspect-video bg-gray-400"
+      transition:name={transition.image}
+    >
+    </div>
+    <div class="text-2xl"
+      transition:name={transition.title}>{title}</div>
+  </a>

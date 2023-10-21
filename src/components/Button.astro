@@ -1,0 +1,83 @@
+---
+const { size, color, classes, href, uppercase, type } = Astro.props;
+const Tag = href ? "a" : "button";
+const typeAttr = href ? null : type || "button";
+const uppercaseClasses = uppercase ? "uppercase tracking-wider" : "";
+let colorClasses = "";
+switch (color || "default") {
+  case "primary":
+  case "fuchsia":
+    colorClasses =
+      "text-white bg-fuchsia-600 hover:bg-fuchsia-500 focus-visible:outline-fuchsia-600";
+    break;
+  case "secondary":
+  case "blue":
+    colorClasses =
+      "text-white bg-blue-600 hover:bg-blue-500 focus-visible:outline-blue-600";
+    break;
+  case "success":
+  case "green":
+    colorClasses =
+      "text-white bg-green-600 hover:bg-green-500 focus-visible:outline-green-600";
+    break;
+  case "danger":
+  case "error":
+  case "red":
+    colorClasses =
+      "text-white bg-red-600 hover:bg-red-500 focus-visible:outline-red-600";
+    break;
+  case "warning":
+  case "yellow":
+    colorClasses =
+      "text-white bg-yellow-600 hover:bg-yellow-500 focus-visible:outline-yellow-600";
+    break;
+  case "gray":
+  case "light":
+    colorClasses =
+      "text-gray-700 bg-gray-100 hover:bg-gray-200 focus-visible:outline-gray-700";
+    break;
+  case "white":
+  case "default":
+    colorClasses = "text-gray-700 bg-white hover:bg-gray-50";
+    break;
+  default:
+    colorClasses = color;
+    break;
+}
+let sizeClasses = "";
+switch (size || "md") {
+  case "xs":
+    sizeClasses = "px-1.5 py-0.5 text-xs";
+    break;
+  case "sm":
+    sizeClasses = "px-2.5 py-1.5 text-xs";
+    break;
+  case "md":
+    sizeClasses = "px-3.5 py-2.5 text-sm";
+    break;
+  case "lg":
+    sizeClasses = "px-4.5 py-3.5 text-base";
+    break;
+  case "xl":
+    sizeClasses = "px-6 py-4 text-lg";
+    break;
+  default:
+    sizeClasses = size;
+    break;
+}
+---
+
+<Tag
+  href={href}
+  type={typeAttr}
+  class:list={[
+    "inline-block rounded-md leading-2 font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2",
+    uppercaseClasses,
+    colorClasses,
+    sizeClasses,
+    classes,
+  ]}
+  {...Astro.props}
+>
+  <slot />
+</Tag>
