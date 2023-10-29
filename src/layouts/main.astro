@@ -8,7 +8,7 @@ const { title } = Astro.props;
 <html lang="en">
   <SiteHead title={title} />
   <body
-    class="bg-zinc-950 text-white min-h-screen flex flex-col justify-start items-stretch overflow-y-scroll"
+    class="bg-zinc-950 text-white selection:bg-fuchsia-600 selection:text-white min-h-screen flex flex-col justify-start items-stretch overflow-y-scroll"
   >
     <SiteHeader />
     <main class="flex-grow flex-shrink"><slot /></main>

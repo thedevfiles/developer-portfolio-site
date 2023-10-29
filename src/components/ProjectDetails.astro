@@ -1,5 +1,6 @@
 ---
 import Badge from "./Badge.astro";
+import { Image } from "astro:assets";
 const { slug, title, image, technologies } = Astro.props;
 const transition = {
   title: `project-title-${slug}`,
@@ -20,9 +21,11 @@ const transition = {
           </div>
         </div>
       </div>
-      <div
+      <Image
+        src={image}
+        alt={title}
+        widths={[800, 600, 300]}
         transition:name={transition.image}
-        class="w-[500px] aspect-video bg-red-500"
       >
-      </div>
+      </Image>
     </div>

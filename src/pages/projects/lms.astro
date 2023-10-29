@@ -4,6 +4,7 @@ import PageTitle from "../../components/PageTitle.astro";
 import BreadCrumbs from "../../components/BreadCrumbs.astro";
 import ProjectDetails from "../../components/ProjectDetails.astro";
 import SiteLayout from "../../layouts/main.astro";
+import Screenshot from "../../images/lms-dashboard.png";
 
 const slug = "lms";
 const title = "Learning Management System";
@@ -11,7 +12,6 @@ const transition = {
   title: `project-title-${slug}`,
   image: `project-image-${slug}`,
 };
-const image = "";
 const technologies = [
   "Laravel",
           "MySQL",
@@ -39,7 +39,7 @@ const technologies = [
     <ProjectDetails
       slug={slug}
       title={title}
-      image={image}
+      image={Screenshot}
       technologies={technologies}
     >
       <p>

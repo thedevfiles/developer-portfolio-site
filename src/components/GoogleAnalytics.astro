@@ -10,9 +10,6 @@ const property = import.meta.env.GOOGLE_ANALYTICS;
     }
     gtag("js", new Date());
     gtag("config", window.google_analytics);
-    document.addEventListener("astro:page-load", (e) => {
-        console.log("Page is loaded", e, gtag);
-    });
     </script>
     <script defer src={`https://www.googletagmanager.com/gtag/js?id=${property}`}></script>
 )}

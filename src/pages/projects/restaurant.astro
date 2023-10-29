@@ -4,6 +4,7 @@ import PageTitle from "../../components/PageTitle.astro";
 import BreadCrumbs from "../../components/BreadCrumbs.astro";
 import SiteLayout from "../../layouts/main.astro";
 import ProjectDetails from "../../components/ProjectDetails.astro";
+import Screenshot from "../../images/restaurant-menu.png";
 
 const slug = "restaurant";
 const title = "Restaurant Online Platform";
@@ -27,7 +28,6 @@ const technologies = [
   "Stripe",
   "REST API",
 ];
-const image = "";
 ---
 
 <SiteLayout title={title}>
@@ -46,7 +46,7 @@ const image = "";
     <ProjectDetails
       slug={slug}
       title={title}
-      image={image}
+      image={Screenshot}
       technologies={technologies}
     >
         <p>

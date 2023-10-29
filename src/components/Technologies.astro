@@ -1,0 +1,118 @@
+---
+import { Icon } from "astro-icon";
+const {classes} = Astro.props
+---
+<div class:list={["grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center", classes]} {...Astro.props}>
+  <a
+    href="https://www.php.net/"
+    rel="nofollow noopener"
+    class="inline-block hover:text-fuchsia-600"
+  >
+    <Icon
+      pack="logos"
+      name="php"
+      class="w-24 h-24 m-auto text-white"
+      role="img"
+      aria-labelledby="skill-php-label"
+    />
+    <h3 id="skill-php-label" class="text-3xl">PHP</h3>
+  </a>
+  <a
+    href="https://vuejs.org/"
+    rel="nofollow noopener"
+    class="inline-block hover:text-fuchsia-600"
+  >
+    <Icon
+      pack="logos"
+      name="vue"
+      class="w-24 h-24 m-auto text-white"
+      role="img"
+      aria-labelledby="skill-vue-label"
+    />
+    <h3 id="skill-vue-label" class="text-3xl">Vue.js</h3>
+  </a>
+  <a
+    href="https://svelte.dev/"
+    rel="nofollow noopener"
+    class="inline-block hover:text-fuchsia-600"
+  >
+    <Icon
+      pack="logos"
+      name="svelte-icon"
+      class="w-24 h-24 m-auto text-white"
+      role="img"
+      aria-labelledby="skill-svelte-label"
+    />
+    <h3 id="skill-svelte-label" class="text-3xl">Svelte</h3>
+  </a>
+  <a
+    href="https://tailwindcss.com/"
+    rel="nofollow noopener"
+    class="inline-block hover:text-fuchsia-600"
+  >
+    <Icon
+      pack="logos"
+      name="tailwindcss-icon"
+      class="w-24 h-24 m-auto text-white"
+      role="img"
+      aria-labelledby="skill-tailwind-label"
+    />
+    <h3 id="skill-tailwind-label" class="text-3xl">TailwindCSS</h3>
+  </a>
+  <a
+    href="https://laravel.com/"
+    rel="nofollow noopener"
+    class="inline-block hover:text-fuchsia-600"
+  >
+    <Icon
+      pack="logos"
+      name="laravel"
+      class="w-24 h-24 m-auto text-white"
+      role="img"
+      aria-labelledby="skill-laravel-label"
+    />
+    <h3 id="skill-laravel-label" class="text-3xl">Laravel</h3>
+  </a>
+  <a
+    href="https://www.mysql.com/"
+    rel="nofollow noopener"
+    class="inline-block hover:text-fuchsia-600"
+  >
+    <Icon
+      pack="logos"
+      name="mysql-icon"
+      class="w-24 h-24 m-auto text-white"
+      role="img"
+      aria-labelledby="skill-mysql-label"
+    />
+    <h3 id="skill-mysql-label" class="text-3xl">MySQL</h3>
+  </a>
+  <a
+    href="https://wordpress.org/"
+    rel="nofollow noopener"
+    class="inline-block hover:text-fuchsia-600"
+  >
+    <Icon
+      pack="mdi"
+      name="wordpress"
+      class="w-24 h-24 m-auto text-white"
+      role="img"
+      aria-labelledby="skill-wordpress-label"
+    />
+    <h3 id="skill-wordpress-label" class="text-3xl">WordPress</h3>
+  </a>
+  <a
+    href="https://aws.amazon.com/"
+    rel="nofollow noopener"
+    class="inline-block hover:text-fuchsia-600"
+  >
+    <Icon
+      pack="logos"
+      name="aws"
+      class="w-24 h-24 m-auto text-white"
+      role="img"
+      aria-labelledby="skill-aws-label"
+    />
+    <h3 id="skill-aws-label" class="text-3xl">AWS</h3>
+  </a>
+</div>

@@ -9,6 +9,26 @@ const { title } = Astro.props
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <script is:inline type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "url": "https://jonbernardi.com",
+        "name": "Jon Bernardi",
+        "author": {
+            "@context": "Person",
+            "name": "Jonathan Bernardi",
+            "familyName": "Bernardi",
+            "givenName": "Jonathan",
+            "jobTitle": "Web Developer",
+            "sameAs": [
+                "https://www.thedevfiles.com",
+                "https://www.linkedin.com/in/jonathan-bernardi-99a31857/",
+                "https://github.com/spekkionu"
+            ]
+        }
+    }
+    </script>
     <GoogleAnalytics />
     <ViewTransitions />
 </head>

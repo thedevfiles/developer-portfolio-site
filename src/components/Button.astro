@@ -2,7 +2,7 @@
 const { size, color, classes, href, uppercase, type } = Astro.props;
 const Tag = href ? "a" : "button";
 const typeAttr = href ? null : type || "button";
-const uppercaseClasses = uppercase ? "uppercase tracking-wider" : "";
+const uppercaseClasses = uppercase ? "uppercase tracking-widest font-light" : "font-semibold";
 let colorClasses = "";
 switch (color || "default") {
   case "primary":
@@ -71,7 +71,7 @@ switch (size || "md") {
   href={href}
   type={typeAttr}
   class:list={[
-    "inline-block rounded-md leading-2 font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2",
+    "inline-block rounded-md leading-2 shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2",
     uppercaseClasses,
     colorClasses,
     sizeClasses,

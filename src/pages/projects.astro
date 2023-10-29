@@ -3,6 +3,15 @@ import Container from "../components/Container.astro";
 import PageTitle from "../components/PageTitle.astro";
 import ProjectSummary from "../components/ProjectSummary.astro";
 import SiteLayout from "../layouts/main.astro";
+import ThumbnailRestaurant from "../images/restaurant-menu.png";
+import ThumbnailBilling from "../images/billing-system-customer-invoice.png";
+import ThumbnailFertility from "../images/fertility-dashboard.png";
+import ThumbnailLms from "../images/lms-dashboard.png";
+import ThumbnailPassword from "../images/password-site.png";
+import ThumbnailLogin from "../images/login.png";
+import ThumbnailShoppingCart from "../images/ecommerce-product.png";
+import ThumbnailStatic from "../images/template-home.png";
+import ThumbnailTemplate from "../images/tektonik.png";
 ---
 
 <SiteLayout title="projects">
@@ -13,71 +22,59 @@ import SiteLayout from "../layouts/main.astro";
       <ProjectSummary
         slug="restaurant"
         title="Restaurant Online Platform"
-        image=""
+        image={ThumbnailRestaurant}
 
       />
       <ProjectSummary
         slug="billing"
         title="Client Billing System"
-        image=""
+        image={ThumbnailBilling}
       />
 
       <ProjectSummary
         slug="fertility"
         title="IVF Donor / Surrogate Database"
-        image=""
+        image={ThumbnailFertility}
       />
 
       <ProjectSummary
         slug="lms"
         title="Learning Management System"
-        image=""
+        image={ThumbnailLms}
       />
 
       <ProjectSummary
         slug="ecommerce"
         title="eCommerce Platform"
-        image=""
-      />
-
-      <ProjectSummary
-        slug="uptime"
-        title="Site Monitoring"
-        image=""
+        image={ThumbnailShoppingCart}
       />
 
       <ProjectSummary
         slug="password"
-        title="Website Pasword Database"
-        image=""
+        title="Website Password Database"
+        image={ThumbnailPassword}
       />
 
       <ProjectSummary
         slug="site-template"
         title="Static Site Template"
-        image=""
+        image={ThumbnailStatic}
       />
 
       <ProjectSummary
         slug="golem-auth"
         title="Golem Auth"
-        image=""
+        image={ThumbnailLogin}
         technologies={["PHP", "Symfony", "Zend Framework", "Aura Framework"]}
       />
 
       <ProjectSummary
         slug="tektonik"
         title="TekTonik"
-        image=""
+        image={ThumbnailTemplate}
         technologies={["WordPress", "Plates"]}
       />
 
-      <ProjectSummary
-        slug="domain-dispatcher"
-        title="Domain Dispatcher"
-        image=""
-        technologies={["PHP", "League Container"]}
-      />
     </div>
   </Container>
 </SiteLayout>

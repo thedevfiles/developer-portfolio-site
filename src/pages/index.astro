@@ -1,12 +1,29 @@
 ---
+import Button from "../components/Button.astro";
+import Paragraphs from "../components/Paragraphs.astro";
 import Container from "../components/Container.astro";
 import PageTitle from "../components/PageTitle.astro";
 import SiteLayout from "../layouts/main.astro";
+import Technologies from "../components/Technologies.astro";
 ---
 
 <SiteLayout title="home">
   <Container>
     <PageTitle>About Me</PageTitle>
-         home page
+
+    <Paragraphs classes="text-2xl">
+    <p>
+      I am a full-stack web developer with over 17 years of professional experience in a wide variety of projects from simple websites for a small business to ecommerce platforms to business automation.
+    </p>
+
+    <Button href="/projects" color="primary" uppercase>
+        Some of my Work
+      </Button>
+  </Paragraphs>
+
+  <h2 class="text-4xl text-center my-12">Technologies</h2>
+  <Technologies classes="my-12" />
+
   </Container>
+
 </SiteLayout>
