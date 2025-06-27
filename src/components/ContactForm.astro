@@ -1,5 +1,6 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
+import Button from "./Button.astro";
 ---
 
 <form
@@ -45,15 +46,14 @@ import { Icon } from "astro-icon";
     </div>
     <div data-netlify-recaptcha="true"></div>
     <div class="flex space-x-4 justify-start items-center">
-      <button
+      <Button
         type="submit"
-        class="rounded-md bg-fuchsia-600 px-3.5 py-2.5 text-sm leading-2 font-semibold text-white shadow-sm hover:bg-fuchsia-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-600"
-        >Submit</button
-      >
+        color="primary"
+        size="xl"
+        >Submit</Button>
       <div id="contact-form-busy" class="hidden">
         <Icon
-          pack="mdi"
-          name="loading"
+          name="mdi:loading"
           class="w-10 h-10 animate-spin"
           role="img"
           aria-labelledby="social-link-github-label"

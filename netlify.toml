@@ -1,10 +1,10 @@
 [build]
   publish = "dist"
-  command = "bun run build"
+  command = "bun --bun astro build"
   functions = "functions/"
 
 [dev]
-  command = "bun run dev"
+  command = "bun --bun astro dev"
   autoLaunch = false
 
 

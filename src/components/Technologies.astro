@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 const {classes} = Astro.props
 ---
 <div class:list={["grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center", classes]} {...Astro.props}>
@@ -9,8 +9,7 @@ const {classes} = Astro.props
     class="inline-block hover:text-fuchsia-600"
   >
     <Icon
-      pack="logos"
-      name="php"
+      name="logos:php"
       class="w-24 h-24 m-auto text-white"
       role="img"
       aria-labelledby="skill-php-label"
@@ -23,8 +22,7 @@ const {classes} = Astro.props
     class="inline-block hover:text-fuchsia-600"
   >
     <Icon
-      pack="logos"
-      name="vue"
+      name="logos:vue"
       class="w-24 h-24 m-auto text-white"
       role="img"
       aria-labelledby="skill-vue-label"
@@ -37,8 +35,7 @@ const {classes} = Astro.props
     class="inline-block hover:text-fuchsia-600"
   >
     <Icon
-      pack="logos"
-      name="svelte-icon"
+      name="logos:svelte-icon"
       class="w-24 h-24 m-auto text-white"
       role="img"
       aria-labelledby="skill-svelte-label"
@@ -51,8 +48,7 @@ const {classes} = Astro.props
     class="inline-block hover:text-fuchsia-600"
   >
     <Icon
-      pack="logos"
-      name="tailwindcss-icon"
+      name="logos:tailwindcss-icon"
       class="w-24 h-24 m-auto text-white"
       role="img"
       aria-labelledby="skill-tailwind-label"
@@ -65,8 +61,7 @@ const {classes} = Astro.props
     class="inline-block hover:text-fuchsia-600"
   >
     <Icon
-      pack="logos"
-      name="laravel"
+      name="logos:laravel"
       class="w-24 h-24 m-auto text-white"
       role="img"
       aria-labelledby="skill-laravel-label"
@@ -79,8 +74,7 @@ const {classes} = Astro.props
     class="inline-block hover:text-fuchsia-600"
   >
     <Icon
-      pack="logos"
-      name="mysql-icon"
+      name="logos:mysql-icon"
       class="w-24 h-24 m-auto text-white"
       role="img"
       aria-labelledby="skill-mysql-label"
@@ -93,8 +87,7 @@ const {classes} = Astro.props
     class="inline-block hover:text-fuchsia-600"
   >
     <Icon
-      pack="mdi"
-      name="wordpress"
+      name="mdi:wordpress"
       class="w-24 h-24 m-auto text-white"
       role="img"
       aria-labelledby="skill-wordpress-label"
@@ -107,8 +100,7 @@ const {classes} = Astro.props
     class="inline-block hover:text-fuchsia-600"
   >
     <Icon
-      pack="logos"
-      name="aws"
+      name="logos:aws"
       class="w-24 h-24 m-auto text-white"
       role="img"
       aria-labelledby="skill-aws-label"

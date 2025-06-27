@@ -5,6 +5,8 @@ import Container from "../components/Container.astro";
 import PageTitle from "../components/PageTitle.astro";
 import SiteLayout from "../layouts/main.astro";
 import Technologies from "../components/Technologies.astro";
+
+const year = (new Date()).getFullYear() - 2006; // 2006 is the year I started working professionally as a developer
 ---
 
 <SiteLayout title="Jon Bernardi">
@@ -13,10 +15,10 @@ import Technologies from "../components/Technologies.astro";
 
     <Paragraphs classes="text-2xl">
     <p>
-      I am a full-stack web developer with over 17 years of professional experience in a wide variety of projects from simple websites for a small business to ecommerce platforms to business automation.
+      I am a full-stack web developer with over {year} years of professional experience in a wide variety of projects from simple websites for a small business to ecommerce platforms to business automation.
     </p>
 
-    <Button href="/projects" color="primary" uppercase>
+    <Button href="/projects/" color="primary" uppercase>
         Some of my Work
       </Button>
   </Paragraphs>
