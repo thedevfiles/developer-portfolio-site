@@ -2,12 +2,34 @@
 import SiteHead from "../components/SiteHead.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
-const { title } = Astro.props;
 import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  meta_description?: string;
+  noindex?: boolean;
+  canonical?: string;
+  meta_tags?: { name?: string; property?: string; content: string }[];
+}
+
+const {
+  title,
+  meta_description,
+  noindex = false,
+  canonical,
+  meta_tags = [],
+} = Astro.props as Props;
+
 ---
 
 <html lang="en">
-  <SiteHead title={title} />
+  <SiteHead
+      title={title}
+      meta_description={meta_description}
+      noindex={noindex}
+      canonical={canonical}
+      meta_tags={meta_tags}
+  />
   <body
     class="bg-zinc-950 text-white selection:bg-fuchsia-600 selection:text-white min-h-screen flex flex-col justify-start items-stretch overflow-y-scroll"
   >
