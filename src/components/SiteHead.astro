@@ -1,7 +1,14 @@
 ---
 import { ClientRouter } from "astro:transitions";
 import { pwaInfo } from 'virtual:pwa-info';
-const { title } = Astro.props
+interface Props {
+    title?: string;
+    meta_description?: string;
+    noindex?: boolean;
+    canonical?: string;
+    meta_tags?: {name?: string; property?: string; content: string}[];
+}
+const {title, meta_description, noindex = false, canonical, meta_tags = []} = Astro.props as Props;
 ---
 <head>
     <meta charset="utf-8" />
@@ -12,6 +19,15 @@ const { title } = Astro.props
     <meta name="author" content="Jonathan Bernardi">
     <link rel="sitemap" href="/sitemap-index.xml" />
     { pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} /> }
+    <link rel="canonical" href={canonical || Astro.url}>
+    {meta_description && <meta name="description" content={meta_description}>}
+    {noindex ? <meta name="robots" content="noindex, follow"> : <meta name="robots" content="index, follow">}
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Jon Bernardi">
+    {meta_tags && meta_tags.map((tag) => (
+            <meta name={tag.name} property={tag.property} content={tag.content} />
+    ))}
+    <slot name="head" />
     <script is:inline type="application/ld+json">
     {
         "@context": "http://schema.org",
@@ -32,6 +48,7 @@ const { title } = Astro.props
         }
     }
     </script>
+    <slot name="schema" />
     <script src="../js/pwa.js"></script>
     <ClientRouter />
 </head>

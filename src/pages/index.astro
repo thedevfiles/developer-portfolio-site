@@ -7,9 +7,10 @@ import SiteLayout from "../layouts/main.astro";
 import Technologies from "../components/Technologies.astro";
 
 const year = (new Date()).getFullYear() - 2006; // 2006 is the year I started working professionally as a developer
+const meta_description = "I am a full-stack web developer with over " + year + " years of professional experience in a wide variety of projects from simple websites for a small business to ecommerce platforms to business automation.";
 ---
 
-<SiteLayout title="Jon Bernardi">
+<SiteLayout title="Jon Bernardi" meta_description={meta_description}>
   <Container>
     <PageTitle>About Me</PageTitle>
 

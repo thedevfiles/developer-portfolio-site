@@ -15,9 +15,10 @@ const transition = {
 const technologies = [
   "Node.js", "Eleventy", "Tailwind CSS", "Netlify"
 ];
+const meta_description = "A static site template built with Eleventy and Tailwind CSS, designed for quick deployment on Netlify.";
 ---
 
-<SiteLayout title={`${title} | Jon Bernardi`}>
+<SiteLayout title={`${title} | Jon Bernardi`} meta_description={meta_description}>
   <Container>
     <PageTitle transition:name={transition.title}>
       {title}

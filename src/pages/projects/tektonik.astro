@@ -15,9 +15,10 @@ const transition = {
 const technologies = [
   "WordPress", "Plates"
 ];
+const meta_description = "Adds a template engine to WordPress, allowing for cleaner and more maintainable theme and plugin development.";
 ---
 
-<SiteLayout title={`${title} | Jon Bernardi`}>
+<SiteLayout title={`${title} | Jon Bernardi`} meta_description={meta_description}>
   <Container>
     <PageTitle transition:name={transition.title}>
       {title}
