@@ -12,12 +12,15 @@ const {title, meta_description, noindex = false, canonical, meta_tags = []} = As
 ---
 <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{title}</title>
     <meta name="generator" content={Astro.generator} />
     <meta name="author" content="Jonathan Bernardi">
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="/favicon.ico" />
     { pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} /> }
     <link rel="canonical" href={canonical || Astro.url}>
     {meta_description && <meta name="description" content={meta_description}>}
